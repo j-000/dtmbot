@@ -1,0 +1,120 @@
++---------------------------------------------------------------------------------------------------------------------------------+
+|  IMPORTANT DISCLAIMER                                                                                                           |
+|                                                                                                                                 |
+|  NO LIABILTY IS ACCEPTED FOR THE INTENDED ACTIONS OR CIRCUMSTANCES RESULTING FROM THE DIRECT, OR INDIRECT, USE OF THIS SOFTWARE.|
+|  THIS SOFTWARE IS PROVIDED 'AS IS' WITH NO WARRANTIES OR GUARANTEES OF ANY KIND.                                                |
+|  THIS SOFTWARE IS PROVIDED FOR EDUCATIONAL PURPOSES ONLY, ON THE TOPICS OF PYTHON SCRIPTING AND BROWSER AUTOMATION.             |
+|  THE USE OF THIS SOFTWARE MAY INFRINGE THE TERMS AND CONDITIONS OF THE HOST. CHECK BEFORE USING.                                |
+|  YOU MAY BE PENALISED: THIS INCLUDES BEING TEMPORATILY BANNED, DEMOTED OR EVEN PERMANENTLY BANNED FROM THE HOST.                |
+|  USE AT YOUR OWN RISK. YOU ARE LIABLE FOR YOUR OWN ACTIONS.                                                                     |
++---------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------+
+|  credentials |
++--------------+
+Type your credentials between single or double quotes.
+Do NOT delete the semicolon (:) or comma (,).
+
+Example:
+
+credentials = {
+    'user':'XXXXXXXX',
+    'secret':'myP@ssw0rd!'
+}
+
+
++------------------+
+| headless-browser |
++------------------+
+Argument type: Boolean
+Usage: True or False
+Action: If 'True', the bot will not lauch the Chrome browser.
+        If 'False', the bot will launch Chrome browser and you will be able to see what happens in real-time.
+Action URL: None
+Default: False
+
+
++--------------+
+| attempt-bust |
++--------------+
+Argument type: Boolean
+Usage: True or False
+Action: If 'True', the bot will attempt to escape jail everytime the user is arrested.
+        If 'False', the bot will simply wait for the jail time to elapse.
+Action URL: /jail
+Default: False
+
+
++---------------+
+| crimes-amount |
++---------------+
+Argument type: String
+Usage: 'all', 'random', 'custom'
+Action: If 'all', the bot will select ALL checkboxes when commiting crimes.
+        If 'random', the bot will select a RANDOM amount of checkboxes when commiting crimes.
+        If 'custom' specify the 'checkboxes' property.
+Action URL: /crimes
+Default: 'random'
+
+
++---------------+
+|   checkboxes  |
++---------------+
+Argument type: Array of integers
+Usage: [1,2,3], [4,5], [1,3,5]
+Action: The bot will select the checkboxes 1,2,3, etc. with checkbox 1 being the first checkbox from the top.
+Action URL: /crimes
+Default: [] (empty array)
+
+
++---------------+
+|   bust-game   |
++---------------+
+Argument type: Boolean
+Usage: True or False
+Action: If True the bot will try to bust as many people as possible. Due to the nature of this action, this will be the only function running.
+Action URL: /jail
+Default: False
+
+
++-----------------+
+|   casino-game   |
++-----------------+
+
++-----------------+
+|   Active        |
++-----------------+
+Argument type: Boolean
+Usage: True or False
+Action: If True the bot only run the video poker game
+Action URL: /videopoker
+Default: False
+
++-----------------+
+|   Max-bet-runs  |
++-----------------+
+Argument type: Integer
+Usage: any number greater than 0
+Action: The bot will play as many amounts of videopoker as specified.
+Action URL: /videopoker
+Default: 1
+
++-----------------+
+|   Bet-amount    |
++-----------------+
+Argument type: Integer
+Usage: any number greater than 0
+Action: The bot will bet this as the amount for each videopoker game.
+Action URL: /videopoker
+Default: 100
+
++-----------------+
+|  Total-max-loss |
++-----------------+
+Argument type: Integer
+Usage: any number greater than 0
+Action: The bot will keep track of the amount lost PER RUN and will stop if it reaches over this amount.
+Important: If you stop the script manually and re-run it, the script will not take into consideration any previous losses!
+Action URL: /videopoker
+Default: 10000
